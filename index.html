@@ -26,6 +26,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            padding: 1rem;
         }
 
         .fx-background {
@@ -42,42 +43,53 @@
         .container-box {
             max-width: 900px;
             width: 100%;
-            padding: 2rem;
+            padding: 1rem;
             text-align: center;
         }
 
         /* Hero Text - Metropolis Bold Style */
         .hero-title {
             font-weight: 900;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            line-height: 1.05;
+            font-size: clamp(2rem, 10vw, 4.5rem);
+            line-height: 1.1;
             letter-spacing: -0.05em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 4vw, 1.25rem);
             font-weight: 400;
             color: #d1d1e0;
             max-width: 600px;
-            margin: 0 auto 3rem;
-            line-height: 1.6;
+            margin: 0 auto 2rem;
+            line-height: 1.5;
         }
 
         .fx-card {
             background-color: var(--fx-ink-light);
-            border-radius: 28px;
-            padding: 3rem;
+            border-radius: 24px;
+            padding: 2rem;
             box-shadow: 0 24px 48px rgba(0,0,0,0.4);
             text-align: left;
             border: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+        }
+
+        /* Penyesuaian padding untuk mobile */
+        @media (max-width: 640px) {
+            .fx-card {
+                padding: 1.5rem;
+            }
+            .result-date {
+                font-size: 1.75rem !important;
+            }
         }
 
         .fx-input-label {
             display: block;
             font-weight: 800;
-            font-size: 0.75rem;
-            margin-bottom: 0.75rem;
+            font-size: 0.7rem;
+            margin-bottom: 0.5rem;
             color: #b1a1c6;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -87,12 +99,13 @@
             width: 100%;
             background-color: var(--fx-ink);
             border: 2px solid #5a3d7a;
-            border-radius: 14px;
-            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            padding: 0.875rem 1rem;
             color: white;
-            font-size: 1.125rem;
+            font-size: 1rem;
             font-weight: 700;
             transition: all 0.2s ease;
+            -webkit-appearance: none; /* Reset gaya default di iOS */
         }
 
         .fx-input:focus {
@@ -103,9 +116,9 @@
 
         .fx-result {
             background: linear-gradient(90deg, #ff7139, #ff4f5e);
-            border-radius: 20px;
-            padding: 2rem;
-            margin-top: 2rem;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
             color: white;
             text-align: center;
             box-shadow: 0 10px 20px rgba(255, 113, 57, 0.2);
@@ -115,11 +128,13 @@
             font-weight: 900;
             font-size: 2.25rem;
             letter-spacing: -0.03em;
+            line-height: 1.2;
+            word-wrap: break-word;
         }
 
         .fx-footer {
-            margin-top: 4rem;
-            font-size: 0.875rem;
+            margin-top: 3rem;
+            font-size: 0.75rem;
             color: #8f8fb0;
         }
 
@@ -131,12 +146,12 @@
         .badge {
             display: inline-block;
             background: rgba(255,255,255,0.1);
-            padding: 5px 14px;
+            padding: 4px 12px;
             border-radius: 100px;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 800;
             letter-spacing: 0.05em;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
 
         input::-webkit-calendar-picker-indicator {
@@ -156,9 +171,9 @@
             </p>
         </header>
 
-        <main class="max-w-md mx-auto">
+        <main class="max-w-md mx-auto w-full">
             <div class="fx-card">
-                <div class="space-y-6">
+                <div class="space-y-4 md:space-y-6">
                     <!-- Bagian Input -->
                     <div>
                         <label class="fx-input-label">Tanggal Saat Ini</label>
@@ -166,8 +181,8 @@
                     </div>
 
                     <!-- Ikon Panah -->
-                    <div class="flex justify-center py-2">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-orange-400">
+                    <div class="flex justify-center py-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-orange-400">
                             <line x1="12" y1="5" x2="12" y2="19"></line>
                             <polyline points="19 12 12 19 5 12"></polyline>
                         </svg>
@@ -182,9 +197,9 @@
                     </div>
 
                     <!-- Label Ketentuan -->
-                    <div class="text-center mt-4">
-                        <span class="text-[10px] font-extrabold text-indigo-300 opacity-60 uppercase tracking-[0.2em]">
-                            Ketentuan 11.03.2026 = 25.05.2032
+                    <div class="text-center mt-2">
+                        <span class="text-[9px] md:text-[10px] font-extrabold text-indigo-300 opacity-60 uppercase tracking-[0.15em] block leading-relaxed">
+                            Ketentuan<br class="sm:hidden"> 11.03.2026 = 25.05.2032
                         </span>
                     </div>
                 </div>
